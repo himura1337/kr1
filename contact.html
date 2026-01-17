@@ -2,11 +2,17 @@
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <title>Контакти</title>
+    <title>Music Hub | Контакти</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
+<!-- ===== HEADER ===== -->
 <header>
     <h1>🎵 Music Hub</h1>
     <nav>
@@ -18,13 +24,38 @@
     </nav>
 </header>
 
-<main>
-    <section class="section">
-        <h2>Контакти</h2>
-        <p>Email: music@example.com</p>
-    </section>
-</main>
+<!-- ===== HERO ===== -->
+<section class="hero">
+    <div>
+        <h2>Зв'яжіться зі мною</h2>
+        <p>Якщо у вас є запитання або пропозиції, залиште повідомлення нижче</p>
+    </div>
+</section>
 
-<footer>© 2025 Криськів Андрій</footer>
+<!-- ===== CONTACT FORM ===== -->
+<section class="section">
+    <h2>Контактна інформація</h2>
+
+    <div class="author" style="flex-direction: column; align-items: flex-start; gap: 20px;">
+        <p><strong>Автор:</strong> Криськів Андрій</p>
+        <p><strong>Група:</strong> ПП-21з</p>
+        <p><strong>Університет:</strong> НУ «Львівська політехніка»</p>
+        <p><strong>Email:</strong> music@example.com</p>
+    </div>
+
+    <h3 style="margin-top:30px;">Форма зворотного зв’язку</h3>
+    <form action="#" method="post" style="margin-top:15px; display:flex; flex-direction:column; gap:15px; max-width:500px;">
+        <input type="text" name="name" placeholder="Ваше ім'я" required style="padding:10px; border-radius:8px; border:none;">
+        <input type="email" name="email" placeholder="Email" required style="padding:10px; border-radius:8px; border:none;">
+        <textarea name="message" placeholder="Повідомлення" rows="5" required style="padding:10px; border-radius:8px; border:none;"></textarea>
+        <button type="submit" style="padding:12px 20px; border:none; border-radius:10px; background:#9b7cff; color:white; font-weight:600; cursor:pointer;">Надіслати</button>
+    </form>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+    © 2025 Криськів Андрій | НУ «Львівська політехніка»
+</footer>
+
 </body>
 </html>

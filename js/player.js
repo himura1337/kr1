@@ -1,40 +1,46 @@
+// Масив треків
 const tracks = [
     { name: "Electronic Beat", src: "assets/audio/track1.mp3" },
     { name: "Chill Jazz", src: "assets/audio/track2.mp3" }
 ];
 
-let index = 0;
-let playing = false;
+let currentIndex = 0;
+let isPlaying = false;
 
 const audio = document.getElementById("audio");
 const trackName = document.getElementById("trackName");
 
+// Завантаження треку
 function loadTrack() {
-    audio.src = tracks[index].src;
-    trackName.textContent = tracks[index].name;
+    audio.src = tracks[currentIndex].src;
+    trackName.textContent = tracks[currentIndex].name;
 }
 
+// Play / Pause
 function playPause() {
-    if (playing) {
+    if (isPlaying) {
         audio.pause();
     } else {
         audio.play();
     }
-    playing = !playing;
+    isPlaying = !isPlaying;
 }
 
+// Наступний трек
 function nextTrack() {
-    index = (index + 1) % tracks.length;
+    currentIndex = (currentIndex + 1) % tracks.length;
     loadTrack();
     audio.play();
-    playing = true;
+    isPlaying = true;
 }
 
+// Попередній трек
 function prevTrack() {
-    index = (index - 1 + tracks.length) % tracks.length;
+    currentIndex = (currentIndex - 1 + tracks.length) % tracks.length;
     loadTrack();
     audio.play();
-    playing = true;
+    isPlaying = true;
 }
 
+// Автоматичне завантаження першого треку
 loadTrack();

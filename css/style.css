@@ -5,36 +5,41 @@
 }
 
 body {
-    font-family: "Segoe UI", Arial, sans-serif;
-    background: linear-gradient(180deg, #0f0f1a, #1a1a2e);
-    color: #eaeaea;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(180deg, #0e0e15, #1b1b2f);
+    color: #f1f1f1;
+    overflow-x: hidden;
 }
 
 /* ===== HEADER ===== */
 header {
-    background: rgba(0,0,0,0.7);
-    backdrop-filter: blur(10px);
-    padding: 18px 50px;
+    background: rgba(0,0,0,0.85);
+    padding: 20px 60px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: sticky;
     top: 0;
     z-index: 100;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.7);
 }
 
 header h1 {
-    font-size: 26px;
-    font-weight: 700;
-    color: #ff4c60;
+    font-size: 28px;
+    color: #9b7cff;
 }
 
 nav a {
-    color: #eaeaea;
+    color: #fff;
     margin-left: 25px;
     text-decoration: none;
     font-weight: 500;
     position: relative;
+    transition: 0.3s;
+}
+
+nav a.active, nav a:hover {
+    color: #ff4c60;
 }
 
 nav a::after {
@@ -44,35 +49,78 @@ nav a::after {
     height: 2px;
     background: #ff4c60;
     left: 0;
-    bottom: -6px;
+    bottom: -5px;
     transition: 0.3s;
 }
 
-nav a:hover::after {
+nav a:hover::after, nav a.active::after {
     width: 100%;
 }
 
-/* ===== MAIN ===== */
-main {
-    padding: 80px 20px;
+/* ===== HERO ===== */
+.hero {
+    height: 80vh;
+    background:
+      linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)),
+      url("assets/img/hero.jpg") center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    animation: fadeIn 1.5s ease forwards;
 }
 
+.hero h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 22px;
+    max-width: 800px;
+}
+
+/* ===== SECTION ===== */
 .section {
-    max-width: 1000px;
-    margin: auto;
-    background: rgba(255,255,255,0.05);
-    padding: 50px;
+    max-width: 1100px;
+    margin: 80px auto;
+    padding: 40px;
+    background: rgba(22,22,34,0.95);
     border-radius: 25px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeInUp 1s forwards;
+    animation-delay: 0.3s;
 }
 
 .section h2 {
-    font-size: 32px;
-    margin-bottom: 20px;
-    color: #ff4c60;
+    font-size: 36px;
+    margin-bottom: 25px;
+    color: #9b7cff;
 }
 
-.section p {
+/* ===== AUTHOR ===== */
+.author {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.author img {
+    width: 220px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(255,255,255,0.2);
+    transition: transform 0.3s;
+}
+
+.author img:hover {
+    transform: scale(1.05);
+}
+
+.author p {
     font-size: 18px;
     line-height: 1.7;
 }
@@ -80,62 +128,47 @@ main {
 /* ===== CARDS ===== */
 .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
     gap: 30px;
-    margin-top: 40px;
+    margin-top: 30px;
 }
 
 .card {
-    background: linear-gradient(145deg, #1f1f3a, #141428);
-    padding: 40px 20px;
+    background: linear-gradient(145deg, #1f1f35, #141428);
+    padding: 30px;
     border-radius: 20px;
-    font-size: 22px;
-    text-align: center;
-    cursor: pointer;
-    transition: 0.3s;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .card:hover {
     transform: translateY(-10px) scale(1.03);
-    box-shadow: 0 20px 40px rgba(255,76,96,0.4);
+    box-shadow: 0 20px 40px rgba(255,76,96,0.5);
 }
 
 /* ===== PLAYER ===== */
 .player {
-    margin: 40px auto 0;
-    max-width: 420px;
-    background: linear-gradient(145deg, #1c1c3a, #101026);
-    padding: 40px;
-    border-radius: 30px;
     text-align: center;
-    box-shadow: 0 30px 60px rgba(0,0,0,0.6);
-}
-
-.player p {
-    font-size: 20px;
-    margin-bottom: 20px;
-    font-weight: 600;
+    margin-top: 20px;
 }
 
 .controls button {
-    font-size: 20px;
+    margin: 15px;
     padding: 15px 20px;
-    margin: 10px;
-    border: none;
+    font-size: 20px;
     border-radius: 50%;
+    border: none;
     cursor: pointer;
-    background: #ff4c60;
-    color: white;
+    background: #9b7cff;
+    color: #fff;
     transition: 0.3s;
 }
 
 .controls button:hover {
-    background: #ff2a42;
+    background: #ff4c60;
     transform: scale(1.1);
 }
 
-/* ===== LIST ===== */
+/* ===== LISTS ===== */
 ul {
     margin-top: 30px;
     list-style: none;
@@ -152,9 +185,19 @@ ul li {
 /* ===== FOOTER ===== */
 footer {
     margin-top: 80px;
-    background: rgba(0,0,0,0.8);
-    color: #aaa;
+    background: #000;
+    padding: 25px;
     text-align: center;
-    padding: 20px;
-    font-size: 14px;
+    color: #aaa;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px);}
+    to { opacity: 1; transform: translateY(0);}
 }
