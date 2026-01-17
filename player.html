@@ -2,7 +2,7 @@
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <title>Music Hub | Головна</title>
+    <title>Музичний плеєр</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -20,15 +20,23 @@
 
 <main>
     <section class="section">
-        <h2>Світ сучасної музики</h2>
-        <p>
-            Music Hub — це багатосторінковий веб-сайт на музичну тематику,
-            створений з використанням HTML, CSS та JavaScript у межах
-            контрольної роботи.
-        </p>
+        <h2>Музичний плеєр</h2>
+
+        <div class="player">
+            <p id="trackName">Трек</p>
+            <audio id="audio"></audio>
+
+            <div class="controls">
+                <button onclick="prevTrack()">⏮</button>
+                <button onclick="playPause()">▶ / ⏸</button>
+                <button onclick="nextTrack()">⏭</button>
+            </div>
+        </div>
     </section>
 </main>
 
 <footer>© 2025 Криськів Андрій</footer>
+
+<script src="js/player.js"></script>
 </body>
 </html>
