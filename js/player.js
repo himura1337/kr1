@@ -1,7 +1,9 @@
 // Масив треків
 const tracks = [
-    { name: "Electronic Beat", src: "assets/audio/track1.mp3" },
-    { name: "Chill Jazz", src: "assets/audio/track2.mp3" }
+    { name: "Pop", src: "assets/audio/track1.mp3" },
+    { name: "Classical music", src: "assets/audio/track2.mp3" }
+   
+
 ];
 
 let currentIndex = 0;
